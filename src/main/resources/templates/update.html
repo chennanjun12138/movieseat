@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{update}" method="post">
+    <table>
+        <tr>
+            <td colspan="2">修改</td>
+        </tr>
+        <tr>
+            <td>userId</td>
+            <td><input type="text" name="userId" th:value="${user.userId}" readonly>
+            </td>
+        </tr>
+        <tr>
+            <td>username</td>
+            <td><input type="text" name="username"th:value="${user.username}"></td>
+        </tr>
+        <tr>
+            <td>password</td>
+            <td><input type="password" name="password"th:value="${user.password}"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" name="确定"></td>
+        </tr>
+    </table>
+
+</form>
+</body>
+</html>

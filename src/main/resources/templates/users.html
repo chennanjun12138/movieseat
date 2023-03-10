@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{toadd}">添加</a>
+<table border="1" width="100%">
+    <tr  align="center">
+        <td height="35">id</td>
+        <td>username</td>
+        <td>password</td>
+        <td>action</td>
+    </tr>
+    <tr th:each="user:${userList}" align="center">
+        <td th:text="${user.userId}" ></td>
+        <td th:text="${user.username}" > </td>
+        <td th:text="${user.password}" > </td>
+        <td >
+            <a th:href="@{delete(userId=${user.userId})}" onclick="return confirm('真要删除吗')">删除</a>
+            <a th:href="@{toUpdate(userId=${user.userId})}">修改</a>
+         </td>
+    </tr>
+</table>
+</body>
+</html>

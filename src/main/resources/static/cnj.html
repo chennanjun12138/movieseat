@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.6.1.js"></script>
+    <script>
+        $(function () {
+           $('#ok').click(function () {
+              $.ajax({
+                  url:'hello',
+                  type:'get',
+                  data:{name:$('#name').val()},
+                  dataType:'text',
+                  success:function (res) {
+                      $('#d').text(res);
+                  }
+              })
+           });
+        });
+    </script>
+</head>
+<body>
+<button id="ok">点击</button>
+<input type="text" name="name" id="name">
+<hr>
+<div id="d"></div>
+<script>
+
+</script>
+</body>
+</html>

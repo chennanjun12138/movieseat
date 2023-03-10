@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table border="1" width="100%">
+    <tr  align="center">
+        <td height="35">id</td>
+        <td>名称</td>
+        <td>座位数</td>
+        <td>等级</td>
+        <td>操作</td>
+    </tr>
+    <tr th:each="showhall:${showhallList}" align="center">
+        <td th:text="${showhall.showid}" ></td>
+        <td th:text="${showhall.showname}" > </td>
+        <td th:text="${showhall.seatnum}" > </td>
+        <td th:text="${showhall.grade}" > </td>
+        <td >
+
+            <a th:href="@{toshowmovie(showid=${showhall.showid})}">进入</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

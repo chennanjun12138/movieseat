@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{order}" method="post" >
+    <table align="center">
+        <tr>
+            <td colspan="2" align="center">订票</td>
+        </tr>
+        <br/>
+        <tr>
+            <td>seatid</td>
+            <td align="center"><input type="text" name="seatid" th:value="${seat.seatid}" readonly>
+            </td>
+        </tr>
+        <br/>
+        <tr>
+            <td>座位号</td>
+            <td th:text="${seat.seatnumber}" > </td>
+        </tr>
+        <br/>
+        <tr>
+            <td>行号</td>
+            <td th:text="${seat.rownumber}" > </td>
+        </tr>
+        <br/>
+        <tr>
+            <td>票价（元）</td>
+            <td th:text="${seat.ticketvalue}" > </td>
+        </tr>
+        <br/>
+        <tr>
+            <td>确定订票</td>
+            <td align="center"><input type="text" name="seatstatus"th:value="1" readonly></td>
+        </tr>
+        <tr >
+            <td></td>
+            <td align="center"><input type="submit" name="确定" onclick="return alert('订票成功')"></td>
+        </tr>
+    </table>
+
+</form>
+</body>
+</html>
